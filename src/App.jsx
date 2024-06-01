@@ -62,12 +62,7 @@ function App() {
       localStorage.setItem(
         "todos",
         JSON.stringify(
-          todos.map((todo) => {
-            if (todo.id === id) {
-              return { ...todo, complete: !todo.complete };
-            }
-            return todo;
-          })
+          todos.map(todo => (todo.id === id) ? { ...todo, complete: !todo.complete } : todo)
         )
       );
       return todos.map((todo) => {
